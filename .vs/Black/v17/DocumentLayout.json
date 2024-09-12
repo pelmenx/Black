@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vtalantsev\\source\\repos\\Black\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1801A7-C582-4960-9657-E1123686A7CA}|Black\\Black.vcxproj|C:\\Users\\vtalantsev\\source\\repos\\Black\\Black\\src\\Black\\Core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF1801A7-C582-4960-9657-E1123686A7CA}|Black\\Black.vcxproj|solutionrelative:Black\\src\\Black\\Core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1801A7-C582-4960-9657-E1123686A7CA}|Black\\Black.vcxproj|C:\\Users\\vtalantsev\\source\\repos\\Black\\Black\\src\\Black\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF1801A7-C582-4960-9657-E1123686A7CA}|Black\\Black.vcxproj|solutionrelative:Black\\src\\Black\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D7AB42-7FBB-4987-A563-B284B9A768C7}|White\\White.vcxproj|C:\\Users\\vtalantsev\\source\\repos\\Black\\White\\src\\WhiteApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7D7AB42-7FBB-4987-A563-B284B9A768C7}|White\\White.vcxproj|solutionrelative:White\\src\\WhiteApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1801A7-C582-4960-9657-E1123686A7CA}|Black\\Black.vcxproj|C:\\Users\\vtalantsev\\source\\repos\\Black\\Black\\src\\Black\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF1801A7-C582-4960-9657-E1123686A7CA}|Black\\Black.vcxproj|solutionrelative:Black\\src\\Black\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 286,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Application.h",
+              "DocumentMoniker": "C:\\Users\\vtalantsev\\source\\repos\\Black\\Black\\src\\Black\\Application.h",
+              "RelativeDocumentMoniker": "Black\\src\\Black\\Application.h",
+              "ToolTip": "C:\\Users\\vtalantsev\\source\\repos\\Black\\Black\\src\\Black\\Application.h",
+              "RelativeToolTip": "Black\\src\\Black\\Application.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-12T18:28:37.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Application.cpp",
+              "DocumentMoniker": "C:\\Users\\vtalantsev\\source\\repos\\Black\\Black\\src\\Black\\Application.cpp",
+              "RelativeDocumentMoniker": "Black\\src\\Black\\Application.cpp",
+              "ToolTip": "C:\\Users\\vtalantsev\\source\\repos\\Black\\Black\\src\\Black\\Application.cpp",
+              "RelativeToolTip": "Black\\src\\Black\\Application.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-12T18:28:22.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WhiteApp.cpp",
+              "DocumentMoniker": "C:\\Users\\vtalantsev\\source\\repos\\Black\\White\\src\\WhiteApp.cpp",
+              "RelativeDocumentMoniker": "White\\src\\WhiteApp.cpp",
+              "ToolTip": "C:\\Users\\vtalantsev\\source\\repos\\Black\\White\\src\\WhiteApp.cpp",
+              "RelativeToolTip": "White\\src\\WhiteApp.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-12T18:28:12.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Core.h",
+              "DocumentMoniker": "C:\\Users\\vtalantsev\\source\\repos\\Black\\Black\\src\\Black\\Core.h",
+              "RelativeDocumentMoniker": "Black\\src\\Black\\Core.h",
+              "ToolTip": "C:\\Users\\vtalantsev\\source\\repos\\Black\\Black\\src\\Black\\Core.h",
+              "RelativeToolTip": "Black\\src\\Black\\Core.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-12T18:26:56.377Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
