@@ -143,6 +143,7 @@
     <ClInclude Include="src\Black.h" />
     <ClInclude Include="src\Black\Application.h" />
     <ClInclude Include="src\Black\Core.h" />
+    <ClInclude Include="src\Black\EntryPoint.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

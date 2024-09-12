@@ -6,4 +6,6 @@
     #else
         #define BLACK_API __declspec(dllimport)
     #endif
+#else
+    #error Black only supports Windows!
 #endif

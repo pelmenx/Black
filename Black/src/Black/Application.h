@@ -11,6 +11,8 @@ namespace Black
 
         void run();
     };
+    // To be defined in CLIENT
+    Application* CreateApplication();
 
 }
 

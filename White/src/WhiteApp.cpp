@@ -15,9 +15,9 @@ public:
 
     
 };
-int main()
+
+
+Black::Application* Black::CreateApplication()
 {
-    White* white = new White();
-    white->run();
-    delete white;
+    return new White();
 }
