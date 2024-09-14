@@ -113,6 +113,7 @@
       <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;BLACK_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Black\vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,6 +129,7 @@
       <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;BLACK_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Black\vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,12 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Black\Application.cpp" />
+    <ClCompile Include="src\Black\Log.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Black.h" />
     <ClInclude Include="src\Black\Application.h" />
     <ClInclude Include="src\Black\Core.h" />
     <ClInclude Include="src\Black\EntryPoint.h" />
+    <ClInclude Include="src\Black\Log.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

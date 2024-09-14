@@ -113,7 +113,7 @@
       <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Black\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Black\src;$(SolutionDir)Black\vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,7 +129,7 @@
       <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Black\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Black\src;$(SolutionDir)Black\vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

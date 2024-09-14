@@ -18,6 +18,9 @@
     <ClCompile Include="src\Black\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Black\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Black\Application.h">
@@ -27,6 +30,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Black.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Black\EntryPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Black\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
