@@ -1,3 +1,5 @@
+#include "BlackPch.h"
+
 #include <Black.h>
 
 class White : public Black::Application

@@ -1,3 +1,5 @@
+#include "BlackPch.h"
+
 #include "Application.h"
 
 #include "Black/Events/ApplicationEvent.h"
