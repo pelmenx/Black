@@ -4,6 +4,9 @@
     <Filter Include="Black">
       <UniqueIdentifier>{2234E60C-8E48-0EBE-57CA-B11DC39D0AEF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Black\Events">
+      <UniqueIdentifier>{C6A59759-B208-27FE-5B8E-5FB447D0F280}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Black.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Black\EntryPoint.h">
       <Filter>Black</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Black\Events\ApplicationEvent.h">
+      <Filter>Black\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Black\Events\Event.h">
+      <Filter>Black\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Black\Events\KeyEvent.h">
+      <Filter>Black\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Black\Events\MouseEvent.h">
+      <Filter>Black\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Black\Log.h">
       <Filter>Black</Filter>
