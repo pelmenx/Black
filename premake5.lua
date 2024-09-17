@@ -10,6 +10,12 @@ workspace "Black"
 
 outputdir = "%{cfg.buildcgf}-%{cfg.system}-%{cfg.architecture}"
 
+-- include directories relative to root folder (solution directory)
+includeDir = {}
+includeDir["GLFW"] = "Black/vendor/GLFW/include"
+
+include "Black/vendor/GLFW"
+
 project "Black"
     location "Black"
     kind "SharedLib"
@@ -23,13 +29,20 @@ project "Black"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
     
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{includeDir.GLFW}"
 	}
 
 	filter "system:windows"
@@ -41,6 +54,7 @@ project "Black"
 		{
 			"BLACK_PLATFORM_WINDOWS",
 			"BLACK_BUILD_DLL",
+			"BLACK_ENABLE_ASSERTS"
 		}
 
 		postbuildcommands
