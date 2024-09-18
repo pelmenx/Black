@@ -45,8 +45,10 @@ namespace Black
             return GetCategoryFlags() & category;
         }
 
+        bool isHandled() {return m_Handaled; }
+        
     protected:
-        bool m_Handled = false;
+        bool m_Handaled = false;
     };
 
     class EventDispatcher
@@ -65,7 +67,7 @@ namespace Black
             if (m_Event.GetEventType() == T::GetStaticType())
             {
                 // m_Event.m_Handled |= func(*static_cast<T&>(m_Event));
-                m_Event.m_Handled |= func(*(T*)&m_Event);
+                m_Event.m_Handaled |= func(*(T*)&m_Event);
                 return true;
             }
             return false;

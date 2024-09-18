@@ -18,7 +18,25 @@ namespace Black
     {
         EventDispatcher dispatcher(e);
         dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+
+        for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+        {
+            (*--it)->onEvent(e);
+            if (e.isHandled())
+                break;
+        }
+        
         BLACK_CORE_TRACE("{0}",e);
+    }
+
+    void Application::PushLayer(Layer* layer)
+    {
+        m_LayerStack.PushLayer(layer);
+    }
+
+    void Application::PushOverlay(Layer* overlay)
+    {
+        m_LayerStack.PushOverlay(overlay);
     }
 
     bool Application::OnWindowClose(WindowCloseEvent& e)
@@ -34,6 +52,10 @@ namespace Black
         {
             glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
+
+            for (Layer* layer : m_LayerStack)
+                layer->OnUpdate();
+            
             m_Window->OnUpdate();
         }
     }   
