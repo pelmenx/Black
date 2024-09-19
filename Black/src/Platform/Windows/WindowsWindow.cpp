@@ -1,11 +1,12 @@
 #include "BlackPch.h"
 
 #include "WindowsWindow.h"
-#include "Black/Window.h"
 
+#include "Black/Window.h"
 #include "Black/Events/ApplicationEvent.h"
 #include "Black/Events/KeyEvent.h"
 #include "Black/Events/MouseEvent.h"
+#include "glad/glad.h"
 
 namespace Black
 {
@@ -51,6 +52,8 @@ namespace Black
         m_Window = glfwCreateWindow(static_cast<int>(m_Data.Width), static_cast<int>(m_Data.Height), m_Data.Title.c_str(), nullptr, nullptr);
 
         glfwMakeContextCurrent(m_Window);
+        int status = gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress));
+        BLACK_CORE_ASSERT(status, "Could not initialize GLAD!")
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
 

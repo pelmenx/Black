@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcgf}-%{cfg.system}-%{cfg.architecture}"
 -- include directories relative to root folder (solution directory)
 includeDir = {}
 includeDir["GLFW"] = "Black/vendor/GLFW/include"
+includeDir["Glad"] = "Black/vendor/Glad/include"
 
 include "Black/vendor/GLFW"
+include "Black/vendor/Glad"
 
 project "Black"
     location "Black"
@@ -35,6 +37,7 @@ project "Black"
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
     
@@ -42,7 +45,8 @@ project "Black"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{includeDir.GLFW}"
+		"%{includeDir.GLFW}",
+		"%{includeDir.Glad}"
 	}
 
 	filter "system:windows"
@@ -54,7 +58,8 @@ project "Black"
 		{
 			"BLACK_PLATFORM_WINDOWS",
 			"BLACK_BUILD_DLL",
-			"BLACK_ENABLE_ASSERTS"
+			"BLACK_ENABLE_ASSERTS",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
