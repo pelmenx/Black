@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcgf}-%{cfg.system}-%{cfg.architecture}"
 includeDir = {}
 includeDir["GLFW"] = "Black/vendor/GLFW/include"
 includeDir["Glad"] = "Black/vendor/Glad/include"
+includeDir["ImGui"] = "Black/vendor/ImGui"
 
 include "Black/vendor/GLFW"
 include "Black/vendor/Glad"
+include "Black/vendor/ImGui"
 
 project "Black"
     location "Black"
@@ -38,6 +40,7 @@ project "Black"
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
     
@@ -46,7 +49,8 @@ project "Black"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{includeDir.GLFW}",
-		"%{includeDir.Glad}"
+		"%{includeDir.Glad}",
+		"%{includeDir.ImGui}"
 	}
 
 	filter "system:windows"

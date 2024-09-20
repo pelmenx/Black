@@ -12,7 +12,7 @@ public:
 
     void OnUpdate() override
     {
-        BLACK_INFO("ExapmleLayer::Update");
+        // BLACK_INFO("ExapmleLayer::Update");
     }
 
     void onEvent(Black::Event& e) override
@@ -27,6 +27,7 @@ public:
     White()
     {
         PushLayer(new ExampleLayer());
+        PushOverlay(new Black::ImGuiLayer());
     }
 
     ~White()
