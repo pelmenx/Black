@@ -79,7 +79,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>BlackPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;BLACK_BUILD_DLL;BLACK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;BLACK_DEBUG;BLACK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;BLACK_BUILD_DLL;GLFW_INCLUDE_NONE;BLACK_DEBUG;BLACK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
@@ -87,7 +87,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -100,7 +100,7 @@
       <ImportLibrary>..\bin\-windows-x86_64\Black\Black.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\-windows-x86_64\Black\Black.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\Black\Black.dll ..\bin\-windows-x86_64\White &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\Black\Black.dll ..\bin\-windows-x86_64\White &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\-windows-x86_64\Black\Black.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\Black\Black.dll "..\bin\-windows-x86_64\White\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\Black\Black.dll "..\bin\-windows-x86_64\White\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -108,10 +108,10 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>BlackPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;BLACK_BUILD_DLL;BLACK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;BLACK_BUILD_DLL;GLFW_INCLUDE_NONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -121,7 +121,7 @@
       <ImportLibrary>..\bin\-windows-x86_64\Black\Black.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\-windows-x86_64\Black\Black.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\Black\Black.dll ..\bin\-windows-x86_64\White &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\Black\Black.dll ..\bin\-windows-x86_64\White &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\-windows-x86_64\Black\Black.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\Black\Black.dll "..\bin\-windows-x86_64\White\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\Black\Black.dll "..\bin\-windows-x86_64\White\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -129,11 +129,11 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>BlackPch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;BLACK_BUILD_DLL;BLACK_ENABLE_ASSERTS;GLFW_INCLUDE_NONE;BLACK_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BLACK_PLATFORM_WINDOWS;BLACK_BUILD_DLL;GLFW_INCLUDE_NONE;BLACK_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -144,7 +144,7 @@
       <ImportLibrary>..\bin\-windows-x86_64\Black\Black.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\-windows-x86_64\Black\Black.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\Black\Black.dll ..\bin\-windows-x86_64\White &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\Black\Black.dll ..\bin\-windows-x86_64\White &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\-windows-x86_64\Black\Black.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\Black\Black.dll "..\bin\-windows-x86_64\White\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\Black\Black.dll "..\bin\-windows-x86_64\White\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

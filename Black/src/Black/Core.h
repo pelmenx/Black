@@ -10,6 +10,10 @@
     #error Black only supports Windows!
 #endif
 
+#ifdef BLACK_DEBUG
+    #define BLACK_ENABLE_ASSERTS
+#endif
+
 #ifdef BLACK_ENABLE_ASSERTS
     #define BLACK_ASSERT(x, ...) {if(!(x)) { BLACK_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
     #define BLACK_CORE_ASSERT(x, ...) {if(!(x)) { BLACK_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }

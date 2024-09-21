@@ -8,6 +8,8 @@ workspace "Black"
 		"Dist"
 	}
 
+	startproject "White"
+
 outputdir = "%{cfg.buildcgf}-%{cfg.system}-%{cfg.architecture}"
 
 -- include directories relative to root folder (solution directory)
@@ -16,9 +18,11 @@ includeDir["GLFW"] = "Black/vendor/GLFW/include"
 includeDir["Glad"] = "Black/vendor/Glad/include"
 includeDir["ImGui"] = "Black/vendor/ImGui"
 
-include "Black/vendor/GLFW"
-include "Black/vendor/Glad"
-include "Black/vendor/ImGui"
+group "Dependencies"
+	include "Black/vendor/GLFW"
+	include "Black/vendor/Glad"
+	include "Black/vendor/ImGui"
+group ""
 
 project "Black"
     location "Black"
@@ -26,6 +30,7 @@ project "Black"
 	language "C++"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	staticruntime "Off"
 
 	pchheader "BlackPch.h"
 	pchsource "%{prj.name}/src/BlackPch.cpp"
@@ -55,20 +60,18 @@ project "Black"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
 		{
 			"BLACK_PLATFORM_WINDOWS",
 			"BLACK_BUILD_DLL",
-			"BLACK_ENABLE_ASSERTS",
 			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/White")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/White/\"")
 		}
 
 	filter "configurations:Debug"
@@ -90,6 +93,7 @@ project "White"
 	language "C++"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	staticruntime "Off"
 	
 	files
 	{
@@ -110,7 +114,6 @@ project "White"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 	defines
@@ -120,12 +123,15 @@ project "White"
 
 	filter "configurations:Debug"
 		defines "BLACK_DEBUG"
+		runtime "Debug"
 		symbols "On"
 	
 	filter "configurations:Debug"
 		defines "BLACK_RELEASE"
+		runtime "Release"
 		optimize "On"
 	
 	filter "configurations:Dist"
 		defines "BLACK_DIST"
+		runtime "Release"
 		symbols "On"
