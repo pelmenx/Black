@@ -157,12 +157,14 @@
     <ClInclude Include="src\Black\Events\KeyEvent.h" />
     <ClInclude Include="src\Black\Events\MouseEvent.h" />
     <ClInclude Include="src\Black\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Black\Input.h" />
     <ClInclude Include="src\Black\Layer.h" />
     <ClInclude Include="src\Black\LayerStack.h" />
     <ClInclude Include="src\Black\Log.h" />
     <ClInclude Include="src\Black\Window.h" />
     <ClInclude Include="src\BlackPch.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +177,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
