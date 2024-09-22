@@ -13,11 +13,13 @@ public:
     void OnUpdate() override
     {
         // BLACK_INFO("ExapmleLayer::Update");
+        if (Black::Input::IsKeyPressed(BLACK_KEY_TAB))
+            BLACK_INFO("Tab key pressed");
     }
 
     void onEvent(Black::Event& e) override
     {
-        BLACK_TRACE("{0}", e);
+        // BLACK_TRACE("{0}", e);
     }
 };
 
