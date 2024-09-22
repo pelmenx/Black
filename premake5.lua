@@ -17,6 +17,7 @@ includeDir = {}
 includeDir["GLFW"] = "Black/vendor/GLFW/include"
 includeDir["Glad"] = "Black/vendor/Glad/include"
 includeDir["ImGui"] = "Black/vendor/ImGui"
+includeDir["glm"] = "Black/vendor/glm"
 
 group "Dependencies"
 	include "Black/vendor/GLFW"
@@ -39,6 +40,8 @@ project "Black"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
 
 	links
@@ -55,7 +58,8 @@ project "Black"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{includeDir.GLFW}",
 		"%{includeDir.Glad}",
-		"%{includeDir.ImGui}"
+		"%{includeDir.ImGui}",
+		"%{includeDir.glm}"
 	}
 
 	filter "system:windows"
@@ -109,7 +113,8 @@ project "White"
 	includedirs
 	{
 		"Black/vendor/spdlog/include",
-		"Black/src"
+		"Black/src",
+		"%{includeDir.glm}"
 	}
 
 	filter "system:windows"
