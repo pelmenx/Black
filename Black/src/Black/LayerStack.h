@@ -20,7 +20,7 @@ namespace Black
         std::vector<Layer*>::iterator end() {return m_LayerStack.end(); }
     private:
         std::vector<Layer*> m_LayerStack;
-        std::vector<Layer*>::iterator m_LayerIterator;
+        unsigned int m_LayerInsertIndex = 0;
     };
 }
 

@@ -6,6 +6,8 @@
 #include "Black/LayerStack.h"
 #include "Events/ApplicationEvent.h"
 
+#include "Black/ImGui/ImGuiLayer.h"
+
 namespace Black
 {
     class BLACK_API Application
@@ -25,6 +27,7 @@ namespace Black
     private:
         bool OnWindowClose(WindowCloseEvent& e);
         std::unique_ptr<Window> m_Window;
+        ImGuiLayer* m_ImGuiLayer;
         bool m_Running = true;
         LayerStack m_LayerStack;
 

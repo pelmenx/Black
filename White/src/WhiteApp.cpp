@@ -2,6 +2,8 @@
 
 #include <Black.h>
 
+#include "ImGui/imgui.h"
+
 class ExampleLayer : public Black::Layer
 {
 public:
@@ -21,6 +23,13 @@ public:
     {
         // BLACK_TRACE("{0}", e);
     }
+
+    virtual void OnImGuiRender() override
+    {
+        // ImGui::Begin("Test");
+        // ImGui::Text("Test");
+        // ImGui::End();
+    }
 };
 
 class White : public Black::Application
@@ -29,7 +38,6 @@ public:
     White()
     {
         PushLayer(new ExampleLayer());
-        PushOverlay(new Black::ImGuiLayer());
     }
 
     ~White()

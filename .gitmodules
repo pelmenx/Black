@@ -4,9 +4,9 @@
 [submodule "Black/vendor/GLFW"]
 	path = Black/vendor/GLFW
 	url = https://github.com/pelmenx/glfw
-[submodule "Black/vendor/ImGui"]
-	path = Black/vendor/ImGui
-	url = https://github.com/pelmenx/imgui
 [submodule "Black/vendor/glm"]
 	path = Black/vendor/glm
 	url = https://github.com/g-truc/glm
+[submodule "Black/vendor/ImGui"]
+	path = Black/vendor/ImGui
+	url = https://github.com/pelmenx/imgui

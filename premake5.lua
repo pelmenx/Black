@@ -114,6 +114,7 @@ project "White"
 	{
 		"Black/vendor/spdlog/include",
 		"Black/src",
+		"Black/vendor",
 		"%{includeDir.glm}"
 	}
 

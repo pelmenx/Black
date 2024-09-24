@@ -14,6 +14,7 @@ namespace Black
         virtual void OnAttach() {}
         virtual void OnDetach() {}
         virtual void OnUpdate() {}
+        virtual void OnImGuiRender() {}
         virtual void onEvent(Event & e) {}
 
         inline const std::string & getName() const { return m_DebugName; }
