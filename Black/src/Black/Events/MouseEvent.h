@@ -4,7 +4,7 @@
 
 namespace Black
 {
-    class BLACK_API MouseMovedEvent : public Event
+    class MouseMovedEvent : public Event
     {
     public:
         MouseMovedEvent(float x, float y)
@@ -27,7 +27,7 @@ namespace Black
         float m_MouseY;
     };
 
-    class BLACK_API MouseScrolledEvent : public Event
+    class MouseScrolledEvent : public Event
     {
     public:
         MouseScrolledEvent(float offsetX, float offsetY)
@@ -50,7 +50,7 @@ namespace Black
         float m_OffsetY;
     };
 
-    class BLACK_API MouseButtonEvent : public Event
+    class MouseButtonEvent : public Event
     {
         public:
         inline int GetMouseButton() const {return m_Button; }

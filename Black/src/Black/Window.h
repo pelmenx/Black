@@ -22,7 +22,7 @@ namespace Black
     };
 
     //Interface a desktop window
-    class BLACK_API Window
+    class Window
     {
     public:
         using EventCallbackFn = std::function<void(Event&)>;

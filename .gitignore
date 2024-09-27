@@ -512,3 +512,5 @@ FodyWeavers.xsd
 
 bin/
 bin-int/
+**.idea
+*.idea

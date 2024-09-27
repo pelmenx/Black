@@ -4,7 +4,7 @@
 
 namespace Black
 {
-    class BLACK_API KeyEvent : public Event
+    class KeyEvent : public Event
     {
     public:
         inline int GetKeyCode() const {return m_KeyCode; }
@@ -18,7 +18,7 @@ namespace Black
         int m_KeyCode;
     };
 
-    class BLACK_API KeyPressedEvent : public KeyEvent
+    class KeyPressedEvent : public KeyEvent
     {
     public:
         KeyPressedEvent(int keyCode, int repeatCount)
@@ -38,7 +38,7 @@ namespace Black
         int m_RepeatCount;
     };
 
-    class BLACK_API KeyReleasedEvent : public KeyEvent
+    class KeyReleasedEvent : public KeyEvent
     {
     public:
         KeyReleasedEvent(int keyCode)
@@ -54,7 +54,7 @@ namespace Black
         EVENT_CLASS_TYPE(KeyReleased)
     };
 
-    class BLACK_API KeyTypedEvent : public KeyEvent
+    class KeyTypedEvent : public KeyEvent
     {
     public:
         KeyTypedEvent(int keyCode)

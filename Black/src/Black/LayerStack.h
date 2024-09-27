@@ -5,7 +5,7 @@
 
 namespace Black
 {
-    class BLACK_API LayerStack
+    class LayerStack
     {
     public:
         LayerStack();

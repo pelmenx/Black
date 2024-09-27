@@ -27,14 +27,21 @@ group ""
 
 project "Black"
     location "Black"
-    kind "SharedLib"
+    kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "On"
+
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-	staticruntime "Off"
 
 	pchheader "BlackPch.h"
 	pchsource "%{prj.name}/src/BlackPch.cpp"
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
 
 	files
 	{
@@ -63,7 +70,6 @@ project "Black"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines
@@ -73,31 +79,28 @@ project "Black"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/White/\"")
-		}
-
 	filter "configurations:Debug"
 		defines "BLACK_DEBUG"
 		symbols "On"
 
-	filter "configurations:Debug"
+	filter "configurations:Release"
 		defines "BLACK_RELEASE"
 		optimize "On"
 	
 	filter "configurations:Dist"
 		defines "BLACK_DIST"
-		symbols "On"
+		optimize "On"
 
 
 project "White"
 	location "White"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "On"
+	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-	staticruntime "Off"
 	
 	files
 	{
@@ -119,7 +122,6 @@ project "White"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 	defines
@@ -132,7 +134,7 @@ project "White"
 		runtime "Debug"
 		symbols "On"
 	
-	filter "configurations:Debug"
+	filter "configurations:Release"
 		defines "BLACK_RELEASE"
 		runtime "Release"
 		optimize "On"
@@ -140,4 +142,4 @@ project "White"
 	filter "configurations:Dist"
 		defines "BLACK_DIST"
 		runtime "Release"
-		symbols "On"
+		optimize "On"

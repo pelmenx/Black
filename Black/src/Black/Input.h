@@ -4,7 +4,7 @@
 
 namespace Black
 {
-    class BLACK_API Input
+    class Input
     {
     public:
         inline static bool IsKeyPressed(int key) { return s_Instance->IsKeyPressedImpl(key); }

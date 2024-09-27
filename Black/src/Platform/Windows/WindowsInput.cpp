@@ -33,7 +33,7 @@ namespace Black
         double posX, posY;
         glfwGetCursorPos(window, &posX, &posY);
         
-        return {posX, posY};
+        return {static_cast<float>(posX), static_cast<float>(posY)};
     }
 
     float WindowsInput::GetMouseXImpl()

@@ -10,7 +10,7 @@
 
 namespace Black
 {
-    class BLACK_API Application
+    class Application
     {
     public:
         Application();

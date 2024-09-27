@@ -4,7 +4,7 @@
 
 namespace Black
 {
-    class BLACK_API WindowResizeEvent : public Event
+    class WindowResizeEvent : public Event
     {
     public:
         WindowResizeEvent(unsigned int width, unsigned int height)
@@ -28,7 +28,7 @@ namespace Black
         unsigned int m_Height;
     };
 
-    class BLACK_API WindowCloseEvent : public Event
+    class WindowCloseEvent : public Event
     {
     public:
         WindowCloseEvent() {};
@@ -37,7 +37,7 @@ namespace Black
         EVENT_CLASS_CATEGORY(EventCategoryApplication)
     };
 
-    class BLACK_API AppTickEvent : public Event
+    class AppTickEvent : public Event
     {
         public:
         AppTickEvent() {};
@@ -46,7 +46,7 @@ namespace Black
         EVENT_CLASS_CATEGORY(EventCategoryApplication)
     };
 
-    class BLACK_API AppUpdateEvent : public Event
+    class AppUpdateEvent : public Event
     {
     public:
         AppUpdateEvent() {};
@@ -55,7 +55,7 @@ namespace Black
         EVENT_CLASS_CATEGORY(EventCategoryApplication)
     };
 
-    class BLACK_API AppRenderEvent : public Event
+    class AppRenderEvent : public Event
     {
     public:
         AppRenderEvent() {};
