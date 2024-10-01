@@ -6,7 +6,8 @@
 #include "Black/Events/ApplicationEvent.h"
 #include "Black/Events/KeyEvent.h"
 #include "Black/Events/MouseEvent.h"
-#include "glad/glad.h"
+
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace Black
 {
@@ -40,6 +41,8 @@ namespace Black
 
         BLACK_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
+        
+
         if (!s_GLFWInitialized)
         {
             int success = glfwInit();
@@ -48,12 +51,12 @@ namespace Black
 
             s_GLFWInitialized = true;
         }
-
+        
         m_Window = glfwCreateWindow(static_cast<int>(m_Data.Width), static_cast<int>(m_Data.Height), m_Data.Title.c_str(), nullptr, nullptr);
 
-        glfwMakeContextCurrent(m_Window);
-        int status = gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress));
-        BLACK_CORE_ASSERT(status, "Could not initialize GLAD!")
+        m_Context = new OpenGLContext(m_Window);
+        m_Context->Init();
+        
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
 
@@ -162,7 +165,7 @@ namespace Black
     void WindowsWindow::OnUpdate()
     {
         glfwPollEvents();
-        glfwSwapBuffers(m_Window);
+        m_Context->SwapBuffers();
     }
 
     void WindowsWindow::SetVSync(bool enabled)
