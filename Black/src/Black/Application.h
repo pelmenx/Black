@@ -1,12 +1,14 @@
 #pragma once
 
-#include "Core.h"
-
 #include "Window.h"
 #include "Black/LayerStack.h"
 #include "Events/ApplicationEvent.h"
 
 #include "Black/ImGui/ImGuiLayer.h"
+
+#include "Black/Renderer/Shader.h"
+
+class Shader;
 
 namespace Black
 {
@@ -36,6 +38,7 @@ namespace Black
         unsigned int m_VertexArray;
         unsigned int m_VertexBuffer;
         unsigned int m_IndexBuffer;
+        std::unique_ptr<Shader> m_Shader;
          
     };
     // To be defined in CLIENT

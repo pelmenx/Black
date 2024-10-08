@@ -3,7 +3,6 @@
 #include "Application.h"
 
 #include <glad/glad.h>
-#include "Input.h"
 
 namespace Black
 {
@@ -42,6 +41,30 @@ namespace Black
         unsigned int indices[3] = { 0, 1, 2 };
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
+        std::string vertexShaderSource = R"(
+			#version 330 core
+			
+			layout(location = 0) in vec3 a_Position;
+			out vec3 v_Position;
+			void main()
+			{
+				v_Position = a_Position;
+				gl_Position = vec4(a_Position, 1.0);	
+			}
+		)";
+
+        std::string fragmentShaderSource = R"(
+			#version 330 core
+			
+			layout(location = 0) out vec4 a_Color;
+			in vec3 v_Position;
+			void main()
+			{
+				a_Color = vec4(v_Position * 0.5 + 0.5, 1.0);
+			}
+		)";
+        
+        m_Shader = std::make_unique<Shader>(vertexShaderSource, fragmentShaderSource);
         
     };
 
@@ -85,6 +108,8 @@ namespace Black
         {
             glClearColor(.1f, 0.1f, 0.1f, .1f);
             glClear(GL_COLOR_BUFFER_BIT);
+
+            m_Shader->Bind();
 
             glBindVertexArray(m_VertexArray);
             glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr);
