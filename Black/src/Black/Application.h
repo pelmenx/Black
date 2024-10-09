@@ -7,6 +7,7 @@
 #include "Black/ImGui/ImGuiLayer.h"
 
 #include "Black/Renderer/Shader.h"
+#include "Black/Renderer/Buffer.h"
 
 class Shader;
 
@@ -36,9 +37,9 @@ namespace Black
         static Application* s_Instance;
 
         unsigned int m_VertexArray;
-        unsigned int m_VertexBuffer;
-        unsigned int m_IndexBuffer;
         std::unique_ptr<Shader> m_Shader;
+        std::unique_ptr<VertexBuffer> m_VertexBuffer;
+        std::unique_ptr<IndexBuffer> m_IndexBuffer;
          
     };
     // To be defined in CLIENT

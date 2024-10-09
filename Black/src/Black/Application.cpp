@@ -22,8 +22,6 @@ namespace Black
 
         glGenVertexArrays(1, &m_VertexArray);
         glBindVertexArray(m_VertexArray);
-        glGenBuffers(1, &m_VertexBuffer);
-        glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
 
         float vertices[3 * 3] = {
             -0.5f, -0.5f, 0.0f,
@@ -31,15 +29,14 @@ namespace Black
              0.0f,  0.5f, 0.0f,
         };
 
-        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+        m_VertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
+        
         glEnableVertexAttribArray(0);
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
 
-
-        glGenBuffers(1, &m_IndexBuffer);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IndexBuffer);
-        unsigned int indices[3] = { 0, 1, 2 };
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+        
+        uint32_t indices[3] = { 0, 1, 2 };
+        m_IndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 
         std::string vertexShaderSource = R"(
 			#version 330 core
@@ -112,7 +109,7 @@ namespace Black
             m_Shader->Bind();
 
             glBindVertexArray(m_VertexArray);
-            glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr);
+            glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
 
             for (Layer* layer : m_LayerStack)
                 layer->OnUpdate();
